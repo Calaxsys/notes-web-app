@@ -1,33 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Note-taking web app</title>
-</head>
-<body>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png" />
 
-  All Notes
-  Archived Notes
-  Tags
+    <title>Frontend Mentor | Note-taking web app</title>
+  </head>
+  <body class="main-grid">
+    <aside class="side-nav">
+      <img src="/assets/images/logo.svg" alt="Notes logo" class="notes-logo"/>
+      <div class="side-nav-btns-container">
+        <button type="button" class="side-nav-btn"><img src="/assets/images/icon-home.svg" alt="">All Notes</button>
+        <button type="button" class="side-nav-btn"><img src="/assets/images/icon-archive.svg" alt="">Archived Notes</button>
+      </div>
+      <p class="tags-title">Tags</p>
+    </aside>
 
-  <!-- Page title -->
+    <!-- Page title -->
+    <section class="top-navigation">     
+      <form action="/search" id="search" role="search" class="search-bar">
+        <div class="top-nav">
+          <input type="text" placeholder="Search by title, content, or tags..." class="search-bar-input"></input>
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24" class="search-icon"><path fill-rule="evenodd" d="M11.248 3.5a7.289 7.289 0 1 0 0 14.577 7.289 7.289 0 0 0 0-14.577ZM2.46 10.79a8.789 8.789 0 1 1 17.577 0 8.789 8.789 0 0 1-17.577 0Z" clip-rule="evenodd"/><path fill-rule="evenodd" d="m16.736 15.648 5.616 5.6-1.06 1.063-5.615-5.601 1.06-1.062Z" clip-rule="evenodd"/></svg>
+        </div>
+      </form>
+      <button type="button" aria-label="Settings" class="settings-btn">
+        <img src="/assets/images/icon-settings.svg" alt="">
+      </button>
+    </section>
 
-  Search by title, content, or tags
+    <section class="tab-content">
+      <button type="button">Create New Note</button>
+    </section>
 
-  Create New Note
+    <section class="current-note" id="current-note">
+      <div class="note-info">
+        <h1>title</h1>
+        <p>Tags</p>
+        <p>Last Edited</p>
+      </div>
+      <div class="save-note">
+        <button type="button">Save Note</button>
+        <button type="button">Cancel</button>
+      </div>
+    </section>
 
-  Tags
-  Last Edited
-
-  Archive Note
-  Delete Note
-
-  Save Note
-  Cancel
-
-</body>
+    <section class="note-options" id="note-options">
+      <button type="button">Archive Note</button>
+      <button type="button">Delete Note</button>
+    </section>
+  </body>
 </html>

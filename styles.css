@@ -1,0 +1,127 @@
+:root {
+  --clr-neutral-100: #F3F5F8;
+  --clr-neutral-200: #E0E4EA;
+
+  --clr-neutral-500: #717784;
+  --clr-neutral-700: #2B303B;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: inter, sans-serif;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-areas: 
+  ". sidebar nav nav nav ."
+  ". sidebar tab-content current-note note-options ."
+  ". sidebar tab-content save-note note-options .";
+  grid-template-rows: 44px 1fr 80px;
+  grid-template-columns: 1rem 1fr 1fr 2fr 1fr 1rem;
+}
+
+
+.side-nav {
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 17.5rem;
+}
+
+.side-nav .notes-logo {
+  margin-block: 1rem;
+}
+
+.side-nav-btns-container {
+  display: grid;
+  width: 100%;
+  margin-bottom: .5rem;
+}
+
+.side-nav .side-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  width: 100%;
+  border: transparent;
+  border-radius: .4rem;
+  padding: .5rem;
+  background-color: transparent;
+  color: var(--clr-neutral-700);
+}
+
+.side-nav .side-nav-btn:hover {
+  background-color: var(--clr-neutral-100);
+  cursor: pointer;
+}
+
+.tags-title {
+  position: relative;
+  font-size: 14px;
+  color: var(--clr-neutral-500);
+}
+
+.tags-title::before {
+  position: absolute;
+  content: '';
+  height: 1px;
+  width: 17rem;
+  background-color: var(--clr-neutral-200);
+  top: -0.5rem;
+}
+
+.top-navigation {
+  grid-area: nav ;
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  justify-content: flex-end;
+  border: 1px solid var(--clr-neutral-200);
+}
+
+.top-nav {
+  position: relative;
+  color: var(--clr-neutral-500);
+}
+
+.search-bar-input {
+  padding: .5rem 1rem;
+  width: 18.75rem;
+  border-radius: .5rem;
+  border: 1px solid var(--clr-neutral-500);
+  padding-left: 2rem;
+}
+
+.search-icon {
+  position: absolute;
+  left: 6px;
+  top: 6px;
+}
+
+.settings-btn {
+  border: transparent;
+  background-color: transparent;
+}
+
+.tab-content {
+  grid-area: tab-content;
+}
+
+.current-note {
+  grid-area: current-note;
+}
+
+.save-note {
+  grid-area: save-note;
+}
+
+.note-options {
+  grid-area: note-options;
+}
